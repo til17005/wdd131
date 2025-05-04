@@ -23,7 +23,8 @@
 body {
     width: 100%;
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 3fr 0fr 10fr 5fr;
 }
 
 header {
@@ -84,5 +85,6 @@ footer {
 
 footer p {
     margin: 1.5em;
-    color: var(--aside-color)
+    color: var(--aside-color);
+    text-align: center;
 }
