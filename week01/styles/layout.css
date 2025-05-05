@@ -28,7 +28,6 @@ body {
 }
 
 header {
-    height: 10em;
     grid-column: span 2;
     grid-row: 1;
     background-color: var(--head-color);
