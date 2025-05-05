@@ -31,3 +31,14 @@ footer {
     gird-column: 1 / 4
     /* 1 / 4 takes the space from column 1 to column 4 */
 }
+
+
+
+JS - Variables
+const: Declares a variable with a constant value. This means that once you assign a value to a const variable, you cannot reassign it later in your code.
+let: Declares a variable that can be reassigned later in your code.
+
+const currentYear = new Date().getFullYear();
+
+let isLoggedIn = false;
+
