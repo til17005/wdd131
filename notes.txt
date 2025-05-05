@@ -1,0 +1,33 @@
+Classic Holy Grail Layout
+grid template: row / columns
+grid-template: auto 1fr auto / auto 1fr auto
+
+parent{
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto
+}
+
+header{
+    gird-column: 1 / 4; 
+    /* 1 / 4 takes the space from column 1 to column 4 */
+}
+
+left-side{
+    gird-column: 1 / 2; 
+    /* 1 / 2 takes the space from column 1 to column 2 */
+}
+
+main {
+    gird-column: 2 / 3;
+    /* 2 / 3 takes the space from column 2 to column 3 */
+}
+
+right-side {
+    grid-column: 3 / 4;
+    /* 3 / 4 takes the space from column 3 to column 4 */
+}
+
+footer {
+    gird-column: 1 / 4
+    /* 1 / 4 takes the space from column 1 to column 4 */
+}
