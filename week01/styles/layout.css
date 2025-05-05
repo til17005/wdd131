@@ -18,7 +18,7 @@ body {
     width: 100%;
     min-height: 100vh;
     display: grid;
-    grid-template: 3fr 1r / 1fr 0 4fr 2fr;
+    grid-template: 3fr 1fr / 1fr 0 4fr 2fr;
 
     /* The grid-template above is essentially the same as the following two lines: 
     grid-template-columns: 3fr 1fr;
