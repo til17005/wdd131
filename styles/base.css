@@ -171,6 +171,10 @@ aside p, ul {
     margin: 10em 0 0 4em;
 }
 
+aside li {
+    margin-bottom: 1.5em;
+}
+
 footer {
     grid-column: span 2;
     grid-row: 3;
