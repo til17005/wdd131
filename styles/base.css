@@ -22,8 +22,14 @@
 
 h1, h2, h3, h4 {
     font-family: var(--heading-font);
+    text-shadow: 2px 2px 5px var(--secondary-color);
+    
 }
 
+p, a {
+    font-size: large;
+    font-weight: 600;
+}
 
 body {
     width: 100%;
@@ -47,7 +53,6 @@ header {
 
 header h2 {
     margin: 1.5em;
-    color: var(--accent-color2);
 }
 
 nav {
@@ -64,7 +69,6 @@ nav {
 nav a {
     margin: 1em 0 1em 0;
     color: var(--black);
-    font-weight: 600;
     text-decoration: none;
 }
 
@@ -81,8 +85,59 @@ main {
     border-radius: 25px;
 }
 
+main h2 {
+    text-align: center;
+    padding: .5em;
+    background-color: var(--accent-color2);
+    border: 1px solid var(--accent-color2);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
 main p {
     margin: 1.5em;
+}
+
+.about {
+    display: flex;
+    margin: 2em;
+}
+
+.about img {
+    margin: 2em;
+}
+
+.about p {
+    align-self: flex-end;
+    text-align: justify;    
+}
+
+.state {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.state h3 {
+    grid-column: 1 / 3;
+    width: 100%;
+    text-align: center;
+}
+
+.state hr {
+    margin-left: 10em;
+    grid-column: 1 / 3;
+    width: 75%;
+}
+
+.state img {
+    grid-column: 1;
+    margin: 1.5em 0 0 5em;
+}
+
+.state p {
+    grid-column: 2;
+    text-align: justify;
 }
 
 .profile {
@@ -101,8 +156,17 @@ aside {
     border-radius: 25px;
 }
 
-aside p {
-    margin: 1.5em;
+aside h2 {
+    text-align: center;
+    padding: .5em;
+    background-color: var(--accent-color2);
+    border: 1px solid var(--accent-color2);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+aside p, ul {
+    margin: 10em 0 0 4em;
 }
 
 footer {
@@ -114,6 +178,9 @@ footer {
 
 footer p {
     margin: 1.5em;
+    font-family: var(--heading-font);
+    font-size: medium;
     color: var(--aside-color);
     text-align: center;
+    text-shadow: 2px 2px 4px var(--accent-color1);
 }

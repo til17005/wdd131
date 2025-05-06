@@ -18,4 +18,11 @@ year.innerHTML = `<span class="currentyear">${today.getFullYear()}</span>`;
 *************************/
 
 // JAvaScript finds the element with the id of lastModified then sets the content of that element to the document.lastModiefied date/time
-document.getElementById("lastModified").textContent = document.lastModified;
+
+// set variable for the lsat modified date time
+let lastModDate = new Date(document.lastModified);
+
+//document.getElementById("lastModified").textContent = document.lastModified; This was my first attempt and I didn't like it because of the difficulty in adding additional text
+
+// this replaced the above line and allows me to add text (Last Modified: then calls the variable and converts it to a string)
+document.getElementById("lastModified").textContent = "Last Modified: " + lastModDate.toLocaleString();
