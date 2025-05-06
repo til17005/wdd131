@@ -37,8 +37,163 @@ footer {
 JS - Variables
 const: Declares a variable with a constant value. This means that once you assign a value to a const variable, you cannot reassign it later in your code.
 let: Declares a variable that can be reassigned later in your code.
+var: Outdated and replaced by let for several reasons. let fixes these so do not use var.
 
-const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
 
-let isLoggedIn = false;
+    let isLoggedIn = false;
 
+    Use const when you can, and use let when you have to.
+
+    In JavaScript you can use single quotes ('), double quotes ("), or backticks (`) to define string literals.
+    The most traditional way is to use single quotes.
+
+    Template literals are string literals that allow for embedded expressions. They are enclosed by the backtick (`) character instead of single or double quotes.
+    Template literals can contain placeholders, which are indicated by the dollar sign and curly braces (${expression}).
+
+    ex: let name = 'Alicia';
+        let age = 25;
+        let message2 = `My name is ${name} and I am ${age} years old.`;
+
+Comments
+
+/* 
+  Multi-line
+  comment
+*/
+
+// single line or remaining line comment
+
+
+Parsing
+
+    The parseInt() function parses a string and returns an integer.
+    The parseFloat() function parses a string and returns a floating-point number.
+    Unary plus operator (+), e.g., result = one; result += +two; . Using the unary plus operator converts a string to a number.
+    Number() constructur can be used to create a new Number object, or when called as a function, it converts a string to a number data type.
+
+
+Arrays - single object with multiple values
+    let myNameArray = ["Matthew", "Chris", "Wayne"]
+    let myAgeArray = [7, 14, 21]
+
+    to access the array data you must know the first value is in the zero [0] spot
+
+    myNameArray[0]; // this will return Matthew
+    myNameArray[1]; // this will return Chris
+
+    myAgeArray[0]; // this will return 7
+
+Objects - code structure that models a real-life object
+    let dog = { name: "Shades", breed: "Terrier Mix", color: "brown", size: "medium" }
+
+    to retrieve the info you would use the following
+    dog.name;
+    dog.breed;
+
+    The contents within objects define by a const variable may be changed. The variable object isn't changing only the contents of the object is changing. 
+
+    In computer science, an object is a value in memory which is possibly referenced by an identifier. 
+    In JavaScript, objects are the only mutable (changeable) values. Functions are, in fact, also objects with the additional capability of being callable.
+
+if you type the contents of a variable inside " " is will be a string. This is becasue JavaScript is a dynamically type language. 
+All this means is that you don't have to specify the data type.
+    
+    let myNumber = "75"; 
+    this will be a string and not a number. If you want a number you must enter
+    let myNumber = 75;
+
+All types except Object define immutable (can not be changed unless redeclared) values represented directly at the lowest level of the language.
+We refer to values of these types as primitive values.
+
+All primitive types, except null and undefined, have their corresponding object wrapper types,
+which provide useful methods for working with the primitive values. For example, the Number object 
+provides methods like toExponential(). When a property is accessed on a primitive value, JavaScript 
+automatically wraps the value into the corresponding wrapper object and accesses the property on 
+the object instead. However, accessing a property on null or undefined throws a TypeError exception,
+which necessitates the introduction of the optional chaining operator.
+
+Type	    typeof return value	        Object wrapper
+Null	    "object"	                N/A
+Undefined	"undefined"	                N/A
+Boolean	    "boolean"	                Boolean
+Number	    "number"	                Number
+BigInt	    "bigint"	                BigInt
+String	    "string"	                String
+Symbol	    "symbol"	                Symbol
+
+Conceptually, undefined indicates the absence of a value, while null indicates the absence of an object
+
+Optional chaining (?.)
+The optional chaining (?.) operator accesses an object's property or calls a function. If the object 
+accessed or function called using this operator is undefined or null, the expression short circuits 
+and evaluates to undefined instead of throwing an error.
+
+    const adventurer = {
+    name: "Alice",
+    cat: {
+        name: "Dinah",
+    },
+    };
+
+    const dogName = adventurer.dog?.name;
+    console.log(dogName);
+    // Expected output: undefined
+
+    console.log(adventurer.someNonExistentMethod?.());
+    // Expected output: undefined
+
+
+The Boolean type represents a logical entity and is inhabited by two values: true and false.
+The Number type is a double-precision 64-bit binary format IEEE 754 value.
+The BigInt type is a numeric primitive in JavaScript that can represent integers with arbitrary magnitude.
+The String type represents textual data and is encoded as a sequence of 16-bit unsigned integer values representing UTF-16 code units.
+    Each element in the string occupies a position in the string. The first element is at index 0, the next at index 1, and so on. 
+A Symbol is a unique and immutable primitive value and may be used as the key of an Object property (see below). 
+
+Objects:
+    In JavaScript, objects can be seen as a collection of properties.
+    With the object literal syntax, a limited set of properties are initialized; then properties can be added and removed.
+
+    Dates:
+        JavaScript provides two sets of APIs for representing dates: the legacy Date object and the modern Temporal object.
+        Date has many undesirable design choices and should be avoided in new code if possible.
+    
+    Indexed Collections:
+        Arrays are regular objects for which there is a particular relationship between integer-keyed properties and the length property.
+        Typed Arrays present an array-like view of an underlying binary data buffer, and offer many methods that have similar semantics to the array counterparts.
+            "Typed array" is an umbrella term for a range of data structures, including Int8Array, Float32Array, etc.
+
+    Keyed Collections:
+        These data structures take object references as keys.
+        Set and WeakSet represent a collection of unique values, while Map and WeakMap represent a collection of key-value associations.
+
+    Structured Data: JSON
+        JSON (JavaScript Object Notation) is a lightweight data-interchange format, derived from JavaScript, but used by many programming languages.
+        JSON builds universal data structures that can be transferred between different environments and even across languages. See JSON for more details.
+
+Type Coercion - As mentioned above, JavaScript is a weakly typed language. This means that you can often use a value of one type where another type is expected,
+                and the language will convert it to the right type for you. To do so, JavaScript defines a handful of coercion rules.
+    
+    Primitive coercion
+        The primitive coercion process is used where a primitive value is expected, but there's no strong preference for what the actual type should be. This is usually when a string, a number, or a BigInt are equally acceptable. For example:
+
+        The Date() constructor, when it receives one argument that's not a Date instance — strings represent date strings, while numbers represent timestamps.
+        The + operator — if one operand is a string, string concatenation is performed; otherwise, numeric addition is performed.
+        The == operator — if one operand is a primitive while the other is an object, the object is converted to a primitive value with no preferred type.
+
+    Numeric coercion
+        There are two numeric types: Number and BigInt. Sometimes the language specifically expects a number or a BigInt (such as Array.prototype.slice(),
+        where the index must be a number); other times, it may tolerate either and perform different operations depending on the operand's type
+
+        Numeric coercion is nearly the same as number coercion, except that BigInts are returned as-is instead of causing a TypeError.
+        Numeric coercion is used by all arithmetic operators, since they are overloaded for both numbers and BigInts
+
+    Other coercions
+        All data types, except Null, Undefined, and Symbol, have their respective coercion process
+
+        As you may have noticed, there are three distinct paths through which objects may be converted to primitives:
+
+            Primitive coercion: [Symbol.toPrimitive]("default") → valueOf() → toString()
+            Numeric coercion, number coercion, BigInt coercion: [Symbol.toPrimitive]("number") → valueOf() → toString()
+            String coercion: [Symbol.toPrimitive]("string") → toString() → valueOf()

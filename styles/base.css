@@ -1,0 +1,119 @@
+:root {
+    /* Fonts */
+    --heading-font: 'Rock Salt', 'Fuzzy Bubbles', Helvetica, sans-serif;
+    --standard-font: 'Montserrat', Helvetica, sans-serif;
+
+    /* Colors */
+    --primary-color: #B5E2FA;
+    --secondary-color: #0FA3B1;
+    --text-color: #F9F7F3;
+    --accent-color1: #EDDEA4;
+    --accent-color2: #F7A072;
+    --black: #000000;
+}
+
+/* wild card settings */
+* {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template: 1fr 4fr .5fr / 3fr 1fr;
+
+    /* The grid-template above is essentially the same as the following two lines: 
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 0fr 4fr 2fr; 
+    */
+}
+
+header {
+    grid-column: span 2;
+    grid-row: 1;
+    background-color: var(--primary-color);
+    position: relative;
+    text-align: center;
+}
+
+header h2 {
+    margin: 1.5em;
+    color: var(--accent-color2);
+}
+
+nav {
+    width: 100%;
+    background-color: var(--accent-color1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    border: 1px solid var(--secondary-color)
+}
+
+nav a {
+    margin: 1em 0 1em 0;
+    color: var(--black);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+main {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 1em;
+    border: 1px solid var(--accent-color2);
+    border-radius: 25px;
+}
+
+main p {
+    margin: 1.5em;
+}
+
+.profile {
+    width: 150px;
+}
+
+.flag {
+    width: 200px;
+}
+
+aside {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 1em;
+    border: 1px solid var(--accent-color2);
+    border-radius: 25px;
+}
+
+aside p {
+    margin: 1.5em;
+}
+
+footer {
+    grid-column: span 2;
+    grid-row: 3;
+    background-color: var(--primary-color);
+    border-top: 1px solid var(--secondary-color);
+}
+
+footer p {
+    margin: 1.5em;
+    color: var(--aside-color);
+    text-align: center;
+}
