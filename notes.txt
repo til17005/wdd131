@@ -218,4 +218,94 @@ CSS
         }
     }
 
+
+
+JavaScript Loops
+
+    for loop
+        Runs a block of code a set number of times.
+        Ex:
+        for (let i = 0; i < 5; i++) {
+            console.log("Iteration:", i);
+        }
+
+    while loop
+        Executes as long as the condition remains true.
+        Ex:
+        let i = 0;
+        while (i < 5) {
+            console.log("Iteration:", i);
+            i++;
+        }
+
+    do...while loop
+        Executes at least once before checking the condition.
+        Ex:
+        let i = 0;
+        do {
+            console.log("Iteration:", i);
+            i++;
+        } 
+        while (i < 5);
+
+    for...in loop
+        Iterates over the properties of an object.
+        Ex:
+        const person = { name: "Alice", age: 25, city: "New York" };
+        for (let key in person) {
+            console.log(key, ":", person[key]);
+        }
     
+    for...of loop
+        Iterates over iterable objects like arrays and strings.
+        Ex:
+        const colors = ["red", "green", "blue"];
+        for (let color of colors) {
+            console.log(color);
+        }
+
+    Using break
+        Stops the loop when a condition is met.
+        Ex:
+        for (let i = 0; i < 10; i++) {
+            if (i === 5) {
+                console.log("Breaking at:", i);
+                break;
+            }
+            console.log("Iteration:", i);
+        }
+
+    Using continue
+        Skips an iteration when a condition is met.
+        Ex:
+        for (let i = 0; i < 10; i++) {
+            if (i === 5) {
+                console.log("Skipping:", i);
+                continue;
+            }
+            console.log("Iteration:", i);
+        }
+
+    forEach
+        Ex:
+        const numbers = [1, 2, 3, 4, 5];
+
+        numbers.forEach((num) => {
+            console.log("Number:", num);
+        });
+
+        -----------------------------------------------------------
+        const fruits = ["apple", "banana", "cherry"];
+
+        fruits.forEach((fruit, index) => {
+            console.log(`Fruit at index ${index}: ${fruit}`);
+        });
+
+        -----------------------------------------------------------
+        const prices = [10, 20, 30];
+
+        prices.forEach((price, index, arr) => {
+            arr[index] = price * 2;
+        });
+
+        console.log(prices); // [20, 40, 60]
