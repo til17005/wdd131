@@ -37,7 +37,9 @@ button.addEventListener("click", function () {
             input.focus();
         });
     }
+    // Change input to nothing
     input.value = '';
+    // Focus on input
     input.focus();
 });
 
