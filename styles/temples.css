@@ -1,0 +1,104 @@
+:root {
+    /* Fonts */
+    --heading-font: 'Rock Salt', 'Fuzzy Bubbles', Helvetica, sans-serif;
+    --standard-font: 'Montserrat', Helvetica, sans-serif;
+
+    /* Colors */
+    --primary-color: #B5E2FA;
+    --secondary-color: #0FA3B1;
+    --text-color: #F9F7F3;
+    --accent-color1: #EDDEA4;
+    --accent-color2: #F7A072;
+    --black: #000000;
+}
+
+/* wild card settings */
+* {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--heading-font);
+    text-shadow: 2px 2px 5px var(--secondary-color);
+
+}
+
+p,
+a {
+    font-size: large;
+    font-weight: 600;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 1em;
+}
+
+.navigate {
+    font-size: 1.5em;
+    border: 0;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+}
+
+.navigate::before {
+    content: "☰";
+}
+
+.navigate.open::before {
+    content: "❌";
+}
+
+nav {
+    display: none;
+}
+
+nav.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+nav a {
+    display: block;
+    color: var(--black);
+    font-size: x-large;
+    text-decoration: none;
+    padding: .5em;
+}
+
+nav a:hover {
+    color: var(--black);
+    text-shadow: 2px 2px 3px var(--accent-color2);
+}
+
+.open a {
+    display: block;
+}
+
+.wayfind {
+    color: var(--black);
+    font-weight: bold;
+    text-shadow: 2px 2px 3px var(--accent-color1);
+}
+
+.img-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+figure {
+    margin: 1em;
+}
+
+figure img {
+    width: 100%;
+}
