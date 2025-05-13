@@ -35,6 +35,13 @@ a {
     font-weight: 600;
 }
 
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    
+}
+
 header {
     background-color: var(--primary-color);
     padding: 1em;
@@ -101,4 +108,20 @@ figure {
 
 figure img {
     width: 100%;
+}
+
+footer {
+    grid-column: span 2;
+    grid-row: 3;
+    background-color: var(--primary-color);
+    border-top: 1px solid var(--secondary-color);
+}
+
+footer p {
+    margin: 1.5em;
+    font-family: var(--heading-font);
+    font-size: medium;
+    color: var(--aside-color);
+    text-align: center;
+    text-shadow: 2px 2px 4px var(--accent-color1);
 }
