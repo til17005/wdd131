@@ -87,6 +87,10 @@ nav a:hover {
     text-shadow: 2px 2px 3px var(--accent-color2);
 }
 
+main h1 {
+    text-align: center;
+}
+
 .open a {
     display: block;
 }
