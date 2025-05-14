@@ -15,3 +15,9 @@ navLinks.forEach(link => {
         link.classList.add('wayfind');
     }
 });
+
+
+articleElement.style.font - weight('700');
+articleElement.style.font - weight = 700;
+articleElement.cssstyle - font - weight = '700';
+articleElement.style.fontWeight = 700;
