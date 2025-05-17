@@ -29,6 +29,11 @@ picture {
     border-bottom: .5em solid var(--primary-color);
 }
 
+picture img {
+    width: 100%;
+    height: auto;
+}
+
 section {
     margin: .5em;
     display: grid;
@@ -61,7 +66,7 @@ div p {
 }
 
 hr {
-   opacity: .3;
+    opacity: .3;
 }
 
 .mobile {
@@ -104,7 +109,8 @@ footer {
         padding: .5em;
     }
 
-    .data h2, .weather h2 {
+    .data h2,
+    .weather h2 {
         background-color: var(--accent1-color);
         padding: .75em;
         width: 10em;
@@ -130,9 +136,15 @@ footer {
         right: 4.5em;
     }
 
-    .weather h2{
+    .weather h2 {
         position: absolute;
         right: .1em;
+    }
+    
+    .weather h2::after {
+        content: '';
+        display: inline-block;
+        background: url(/wdd131/images/weather.svg) no-repeat center/contain;
     }
 
     .mobile {
