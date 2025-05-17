@@ -1,11 +1,8 @@
 :root {
 
     /* Colors */
-    --primary-color: #33658A;
-    --secondary-color: #86BBD8;
-    --accent1-color: #758E4F;
-    --accent2-color: #F6AE2D;
-    --accent3-color: #F26419;
+    --primary-color: #F6AE2D;
+    --accent1-color: #F26419;
 }
 
 /* wild card settings */
@@ -18,7 +15,7 @@
 
 header {
     background-color: var(--primary-color);
-    color: white;
+    color: black;
     border-bottom: 1em solid var(--accent1-color);
 }
 
@@ -76,7 +73,7 @@ hr {
 footer {
     height: 5em;
     background-color: var(--primary-color);
-    color: white;
+    color: black;
     text-align: center;
     font-size: larger;
     padding-top: 1em;
@@ -112,7 +109,7 @@ footer {
         padding: .75em;
         width: 10em;
         text-align: left;
-        color: white;
+        color: black;
     }
 
     /*
