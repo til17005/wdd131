@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Dynamic Web Fundamentals - Matthew Tilton</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals: Temples for Matthew Tilton.">
+    <meta name="author" content="Matthew Tilton">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap">
+
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <script src="scripts/filtered-temples.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Temple Album</h1>
+        <button type="button" class="navigate"></button>
+        <nav>
+            <a href="">Home</a>
+            <a href="" class="old">Old</a>
+            <a href="" class="new">New</a>
+            <a href="" class="large">Large</a>
+            <a href="" class="small">Small</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Home</h2>
+        <div class="img-grid"></div>        
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Matthew Tilton | Utah</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>

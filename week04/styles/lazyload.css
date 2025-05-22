@@ -1,0 +1,52 @@
+:root {
+    /* Fonts */
+    --heading-font: 'Rock Salt', 'Fuzzy Bubbles', Helvetica, sans-serif;
+    --standard-font: 'Montserrat', Helvetica, sans-serif;
+
+    /* Colors */
+    --primary-color: #B5E2FA;
+    --secondary-color: #0FA3B1;
+    --text-color: #F9F7F3;
+    --accent-color1: #EDDEA4;
+    --accent-color2: #F7A072;
+    --black: #000000;
+}
+
+/* wild card settings */
+* {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+img {
+    width: 400px;
+    background: black;
+    animation: fade 15s;
+}
+
+footer {
+    text-align: center;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
