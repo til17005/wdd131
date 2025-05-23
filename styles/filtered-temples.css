@@ -20,6 +20,19 @@
     box-sizing: border-box;
 }
 
+.rock-salt-regular {
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal; }
+
+roboto-standard {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
 h1,
 h2,
 h3,
