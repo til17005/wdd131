@@ -155,6 +155,8 @@ window.addEventListener('DOMContentLoaded', () => {
         homeLink.classList.add('wayfind');
     }
     // THis will use the page class for the <h2> element and set it to Home (default page load)
+    // This isn't absoltely needed as the HTML <h2> has it and is overwritten when needed, but
+    // if <h2> was blank it woudl provide it.
     const pageTitle = document.querySelector(".page");
     if (pageTitle) {
         pageTitle.textContent = "Home";
