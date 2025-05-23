@@ -1,22 +1,3 @@
-const navButton = document.querySelector('.navigate');
-const navMenu = document.querySelector('nav');
-
-navButton.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-    navButton.classList.toggle('open');
-});
-
-
-const navLinks = document.querySelectorAll('nav a');
-const currentURL = window.location.href;
-
-navLinks.forEach(link => {
-    if (link.href === currentURL) {
-        link.classList.add('wayfind');
-    }
-});
-
-
 const temples = [
     {
         templeName: "Aba Nigeria",
@@ -101,25 +82,35 @@ const temples = [
     // Add more temple objects here...
 ];
 
+// My querySelector variables
+const navButton = document.querySelector('.navigate');
+const navMenu = document.querySelector('nav');
+const navLinks = document.querySelectorAll('nav a');
+const pageTitle = document.querySelector(".page");
+const oldTemples = document.querySelector("#old");
+const newTemples = document.querySelector("#new");
+const largeTemples = document.querySelector("#large");
+const smallTemples = document.querySelector("#small");
+
+// My function for getting the dedicated string and converting it to a date
 function getYearFromDedicated(dedicatedStr) {
-    const yearString = dedicatedStr.slice(-4);
-    return parseInt(yearString, 10);
+    // This will onvert the dedicated string to a date
+    const date = new Date(dedicatedStr);
+    // This will get the date and make sure it's a number. It will return NaN (not a number) if it's not valid
+    return isNaN(date.getFullYear()) ? null : date.getFullYear();
 }
 
-const oldTemples = document.querySelector(".old");
-const newTemples = document.querySelector("new");
-const largeTemples = document.querySelector("large");
-const smallTemples = document.querySelector("small");
+// Using this to troublshoot my getYear function above for use with multiple date formats
+console.log(getYearFromDedicated("1888, May, 21"));
+console.log(getYearFromDedicated("September 11, 1955"));
 
-oldTemples.addEventListener("click", () => {
-    const html = temples.filter(temple => getYearFromDedicated(temple.dedicated) < 1900)
-        .map(templeCard)
-        .join("");
+// This verifies my function for date works, and by area by grabbing temples that match and logging them to the console
+console.log(temples.filter(temple => getYearFromDedicated(temple.dedicated) < 1900));
+console.log(temples.filter(temple => getYearFromDedicated(temple.dedicated) > 1900));
+console.log(temples.filter(temple => temple.area > 90000));
+console.log(temples.filter(temple => temple.area < 10000));
 
-    document.querySelector(".img-grid").innerHTML = html;
-});
-
-
+// My emple card layout in html
 function templeCard(temple) {
     return `
         <section>
@@ -134,14 +125,142 @@ function templeCard(temple) {
     `
 }
 
-
-/*
+// my rendering function for all cards
 function renderTemple(templeCards) {
     const html = templeCards.map(templeCard);
     document.querySelector(".img-grid").innerHTML = html.join("");
 }
 
+// My toggle for the hamburger menu in the mobile view
+navButton.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    navButton.classList.toggle('open');
+});
 
-renderTemple(temples);
+// most likey not needed. I was trying to set the default to home, but have had issues getting it to load.
+// It shows home in the console, but nothing would load. I may work on this more later.
+let activeLink = "home";
 
+
+// I had to completely change the way I do my way finder.
+// Probably not the best way to do it as it's not intigrated 
+// with the temple cards and the page title
+
+
+// This will essentially set the wayfind to Home as it's teh default page for index.html
+window.addEventListener('DOMContentLoaded', () => {
+    const homeLink = document.getElementById('home');
+    if (homeLink) {
+        homeLink.classList.add('wayfind');
+    }
+});
+
+const getActiveLinkId = () => {
+    // Lets find the active link then return the id or null if none are active
+    const activeLink = document.querySelector('.wayfind');
+    return activeLink ? activeLink.id : null;
+};
+
+
+// Essentially it's listening for a click on any link
+// When it gets one it uses the <a> that was clicked
+// prevents it from reloading, using teh preventDefault
+// method. It removes any previous wayfind, and assigns
+// the class of wayfind to the new clicked <a>. It also
+// add the pageTitle of which nav link was clicked. The 
+// if statements are self explanatory for each link
+navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        navLinks.forEach(nav => nav.classList.remove('wayfind'));
+        event.target.classList.add('wayfind');
+
+        const newActiveLink = getActiveLinkId();
+        if (newActiveLink) {
+            activeLink = newActiveLink;
+        }
+
+        pageTitle.textContent = event.target.textContent.trim();
+
+        if (activeLink == "Home") {
+            renderTemple(temples);
+        }
+        else if (activeLink == "Old") {
+            const html = temples.filter(temple => getYearFromDedicated(temple.dedicated) < 1900)
+                .map(templeCard)
+                .join("");
+            document.querySelector(".img-grid").innerHTML = html;
+        }
+        else if (activeLink == "New") {
+            const html = temples.filter(temple => getYearFromDedicated(temple.dedicated) > 2000)
+                .map(templeCard)
+                .join("");
+            document.querySelector(".img-grid").innerHTML = html;
+        }
+        else if (activeLink == "Large") {
+            const html = temples.filter(temple => temple.area > 90000)
+                .map(templeCard)
+                .join("");
+            document.querySelector(".img-grid").innerHTML = html;
+        }
+        else if (activeLink == "Small") {
+            const html = temples.filter(temple => temple.area < 10000)
+                .map(templeCard)
+                .join("");
+            document.querySelector(".img-grid").innerHTML = html;
+        }
+        else {
+            renderTemple(temples);
+        }
+
+        // Added to help me troubleshoot issues
+        console.log("Active Link ID:", activeLink);
+    });
+});
+
+/*
+
+// Old Code I was working with
+
+const navLinks = document.querySelectorAll('nav a');
+const currentURL = window.location.href;
+
+navLinks.forEach(link => {
+    if (link.href === currentURL) {
+        link.classList.add('wayfind');
+    }
+});
+
+oldTemples.addEventListener("click", () => {
+    const html = temples.filter(temple => getYearFromDedicated(temple.dedicated) < 1900)
+        .map(templeCard)
+        .join("");
+
+    document.querySelector(".img-grid").innerHTML = html;
+});
+
+newTemples.addEventListener("click", () => {
+    const html = temples.filter(temple => getYearFromDedicated(temple.dedicated) > 2000)
+        .map(templeCard)
+        .join("");
+
+    document.querySelector(".img-grid").innerHTML = html;
+});
+
+largeTemples.addEventListener("click", () => {
+    const html = (temples.filter(temple => temple.area > 90000))
+        .map(templeCard)
+        .join("");
+
+    document.querySelector(".img-grid").innerHTML = html;
+});
+
+
+smallTemples.addEventListener("click", () => {
+    const html = (temples.filter(temple => temple.area < 10000))
+        .map(templeCard)
+        .join("");
+
+    document.querySelector(".img-grid").innerHTML = html;
+});
 */
