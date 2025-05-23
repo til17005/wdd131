@@ -147,12 +147,20 @@ let activeLink = "home";
 // with the temple cards and the page title
 
 
-// This will essentially set the wayfind to Home as it's teh default page for index.html
+// DOMContentLoaded helps me by loading these defaults for me before any user interaction occurs.
 window.addEventListener('DOMContentLoaded', () => {
+    // This will essentially set the wayfind to Home as it's teh default page for filteree-temples.html
     const homeLink = document.getElementById('home');
     if (homeLink) {
         homeLink.classList.add('wayfind');
     }
+    // THis will use the page class for the <h2> element and set it to Home (default page load)
+    const pageTitle = document.querySelector(".page");
+    if (pageTitle) {
+        pageTitle.textContent = "Home";
+    }
+    // THis will render the full list of temples for the home page (default page load)
+    renderTemple(temples);
 });
 
 const getActiveLinkId = () => {
@@ -167,7 +175,7 @@ const getActiveLinkId = () => {
 // prevents it from reloading, using teh preventDefault
 // method. It removes any previous wayfind, and assigns
 // the class of wayfind to the new clicked <a>. It also
-// add the pageTitle of which nav link was clicked. The 
+// adds the pageTitle of which nav link was clicked. The 
 // if statements are self explanatory for each link
 navLinks.forEach(link => {
     link.addEventListener('click', (event) => {
