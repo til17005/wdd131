@@ -1,6 +1,7 @@
 :root {
     /* Fonts */
-    --standard-font: 'Roboto', 'Montserrat', Helvetica, sans-serif;
+    --heading-font: 'Roboto', 'Montserrat', Helvetica, sans-serif;
+    --standard-font: 'Montserrat','Roboto', Helvetica, sans-serif;
 
     /* Colors */
     --primary-color: #CFCFEA;
@@ -44,7 +45,7 @@ h2,
 h3,
 h4 {
     color: var(--accent-color2);
-    font-family: var(--standard-font);
+    font-family: var(--heading-font);
     text-shadow: 4px 4px 9px var(--secondary-color);
     text-align: center;
 }
