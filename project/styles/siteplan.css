@@ -1,7 +1,6 @@
 :root {
     /* Fonts */
-    --heading-font: 'Rock Salt', 'Fuzzy Bubbles', Helvetica, sans-serif;
-    --standard-font: 'Montserrat', Helvetica, sans-serif;
+    --standard-font: 'Roboto', 'Montserrat', Helvetica, sans-serif;
 
     /* Colors */
     --primary-color: #CFCFEA;
@@ -20,12 +19,19 @@
     box-sizing: border-box;
 }
 
-.rock-salt-regular {
-    font-family: "Rock Salt", Helvetica;
-    font-weight: 400;
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
     font-style: normal;
-    font-display: swap;
+    font-variation-settings: "wdth" 100;
 }
+
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal; }
 
 body {
     max-width: 1200px;
@@ -38,7 +44,7 @@ h2,
 h3,
 h4 {
     color: var(--accent-color2);
-    font-family: var(--heading-font);
+    font-family: var(--standard-font);
     text-shadow: 4px 4px 9px var(--secondary-color);
     text-align: center;
 }
