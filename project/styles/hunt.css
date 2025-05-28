@@ -1,0 +1,36 @@
+:root {
+    /* Fonts */
+    --heading-font: 'Rock Salt', 'Fuzzy Bubbles', Helvetica, sans-serif;
+    --standard-font: 'Montserrat', Helvetica, sans-serif;
+
+    /* Colors */
+    --primary-color: #CFCFEA;
+    --secondary-color: #A89B9D;
+    --text-color: #2A2C24;
+    --accent-color1: #816C61;
+    --accent-color2: #575A4B;
+    --black: #000000;
+}
+
+/* wild card settings */
+* {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.rock-salt-regular {
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--heading-font);
+    text-shadow: 2px 2px 5px var(--secondary-color);
+}
+
