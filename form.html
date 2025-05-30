@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Dynamic Web Fundamentals - Matthew Tilton</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals: Form for Matthew Tilton.">
+    <meta name="author" content="Matthew Tilton">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <script src="scripts/form.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>WDD 131: Product Review Form - Matthew M. Tilton</h1>
+    </header>
+    <main>
+        <form method="get" action="review.html">
+            <fieldset>
+                <legend>Product review form</legend>
+                <label for="products">Product name</label>
+                <select name="products" id="products" required>
+                    <option value="" selected disabled>Select a product</option>
+                </select>
+
+                <!-- Each lable must be under the input for which it is linked -->
+                <p>Star Rating:</p>
+                <div class="stars">
+                    <input type="radio" name="star" id="5star" value="5" required>
+                    <label for="5star"></label>
+                    
+                    <input type="radio" name="star" id="4star" value="4" required>
+                    <label for="4star"></label>
+                    
+                    <input type="radio" name="star" id="3star" value="3" required>
+                    <label for="3star"></label>
+
+                    <input type="radio" name="star" id="2star" value="2" required>
+                    <label for="2star"></label>
+                    
+                    <input type="radio" name="star" id="1star" value="1" required>  
+                    <label for="1star"></label>
+                </div>
+
+                <label for="install">Install date:</label>
+                <input type="date" name="install" id="install" required>
+
+                <p>Useful features:</p>
+                <div class="check">
+                    <label for="color">Color</label>
+                    <input type="checkbox" name="color" id="color" value="color">
+                    <label for="size">Size</label>
+                    <input type="checkbox" name="size" id="size" value="size">
+                    <label for="style">Style</label>
+                    <input type="checkbox" name="style" id="style" value="style">
+                    <label for="volume">Volume</label>
+                    <input type="checkbox" name="volume" id="volume" value="volume">
+                </div>                
+
+                <label for="review">Written review</label>
+                <textarea name="review" id="review"></textarea>
+
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+
+                <input type="submit" value="Send Review">
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Matthew Tilton | Utah</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
