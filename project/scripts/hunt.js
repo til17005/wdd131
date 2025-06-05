@@ -52,33 +52,21 @@ document.getElementById("lastModified").textContent = "Last Modified: " + lastMo
 /************************
  ***   sign-up.html   ***
 ************************/
-const p = document.querySelector('.info');
+const div = document.querySelector('.info');
 
 const URL = new URLSearchParams(window.location.search);
 const firstName = URL.get("fname");
 const lastName = URL.get("lname");
 const email = URL.get("email");
-const hunting = URL.get("hunting");
-const fishing = URL.get("fishing");
-const camping = URL.get("camping");
-const hiking = URL.get("hiking");
-const backpacking = URL.get("backpacking");
-const view = URL.get("view");
+let intrests = URL.getAll("intrests");
 
-const intrests = [hunting, fishing, camping, hiking, backpacking, view];
-
-function userRequst(firstName, lastName, email, intrests) {
-    return `
-        <p>${firstName} ${lastName}</p>
-        <p>${email}</p>
-        <p>Selected Intrests: ${intrests}</p>
-    `
+if (intrests.length > 0) {
+    intrests = intrests.join(", ");
+} else {
+    intrests = "No interests selected";
 }
 
-function renderUserData(userData) {
-    const data = userData.map(userRequst);
-    p.innerHTML = data.join("");
-    console.log(intrests);
-}
-
-renderUserData()
+div.innerHTML = `<p>Thank you for signing up, ${firstName} ${lastName}!</p>
+<p>We have received your email address: ${email}.</p>
+<p>Your selected interests include: ${intrests}.</p>
+<p>We will keep you updated with the latest news and information.</p>`;
