@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Dynamic Web Fundamentals - Matthew Tilton - Week06 Project - Bakyard Hunting</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals: Project - Bakyard Hunting | Matthew Tilton.">
+    <meta name="author" content="Matthew Tilton">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/hunt.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <script src="scripts/hunt.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <picture>
+            <img src="images/by-hunt-transparent.webp" alt="Backyard Hunting Logo">
+        </picture>
+        <button type="button" class="navigate" aria-label="Hamburger style toggle menu"></button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="hunting.html">Hunting</a>
+            <a href="fishing.html">Fishing</a>
+            <a href="pictures.html">Pictures</a>
+            <a href="news.html">Newsletter</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+    <main class="news">
+        <h1 class="light">Backyard Hunting</h1>
+        <h2 class="light">Newsletter Sign-up</h2>
+        <form method="get" action="sign-up.html">
+            <fieldset>
+                <legend>Newsletter Sign-up</legend>
+
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" id="fname" required>
+
+
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" id="lname" required>
+
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+
+                <p>Specific Intrests:</p>
+                <div class="check">
+                    <div>
+                        <input type="checkbox" name="hunting" id="hunting">
+                        <label for="hunting">Hunting</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="fishing" id="fishing">
+                        <label for="fishing">Fishing</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="camping" id="camping">
+                        <label for="camping">Camping</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="hiking" id="hiking">
+                        <label for="hiking">Hiking</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="backpacking" id="backpacking">
+                        <label for="backpacking">Backpacking</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="views" id="views">
+                        <label for="views">Mountain Views</label>
+                    </div>
+                </div>
+                <input type="submit" value="Sign-up">
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🦌 Backyard Hunting 🦌</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

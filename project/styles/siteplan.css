@@ -30,7 +30,8 @@
 .montserrat-regular {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
-    font-style: normal; }
+    font-style: normal; 
+}
 
 body {
     max-width: 1200px;

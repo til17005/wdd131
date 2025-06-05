@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Dynamic Web Fundamentals - Matthew Tilton - Week06 Project - Bakyard Hunting</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals: Project - Bakyard Hunting | Matthew Tilton.">
+    <meta name="author" content="Matthew Tilton">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/hunt.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <script src="scripts/hunt.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <picture>
+            <img src="images/by-hunt-transparent.webp" alt="Backyard Hunting Logo">
+        </picture>
+        <button type="button" class="navigate" aria-label="Hamburger style toggle menu"></button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="hunting.html">Hunting</a>
+            <a href="fishing.html">Fishing</a>
+            <a href="pictures.html">Pictures</a>
+            <a href="news.html">Newsletter</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+    <main class="fishing">
+        <h1 class="light">Backyard Hunting</h1>
+        <div class="wasatch">
+            <h2 class="light">Wasatch Mountains</h2>
+            <picture>
+                <img src="images/utah-lake.webp" alt="Utah Lake">
+            </picture>
+            <p>
+                The Wasatch Front as well as the Wasatch Back produce many opportunities for great fishing. many
+                of the local resivoirs are stocked on a schedule. One of the more famous fishing areas in this region
+                include Strawberry Resivoir. Although, you can fish from the shore it is best from boat. Ice fishing
+                is also popular at this location. There are other lakes in the area, but if you are more of a river
+                fisher then Provo River is most likely the source for you.
+            </p>
+        </div>
+
+        <div class="uintas">
+            <h2 class="light">High Uintas</h2>
+            <picture>
+                <img src="images/mirror-lake.webp" alt="Mirror Lake">
+            </picture>
+            <p>
+                The Uintas capture my heart with the vast opportunities it produces with its fishing environments.
+                So many lakes and rivers to choose from. Mirror Lake is one of the most famous in the South Slope area.
+                Further north of course you have Flaming Gorge with the Green River Flowing South through the state.
+                Both the North and South slopes have a varities of lakes. One of my favorite stops is Pass Lake. It is a
+                quick hop of the main road for some quick fun. For the more serious fisherman you may want to do a
+                little hiking or backpacking to find your ideal spot.
+            </p>
+        </div>
+
+        <div class="southern">
+            <h2 class="light">Southern Utah</h2>
+            <picture>
+                <img src="images/fish-lake.webp" alt="Fish Lake">
+            </picture>
+            <p>
+                So the state of Utah offers up some wonderful locations to fish, but to many there is none better than
+                Fish Lake. It offers both warm water and ice fishing. This is a deep natural lake that offers a lage
+                selection. You will find Arctic Grayling (one of my favorite), Lake Trout, Splake, Perch, Mackinaw,
+                Rainbow Trout, Tiger Trout, Kokanee Salmon, German Brown Trout, Yellow Perch, and Tiger Muskie.
+                Less common but still foudn in Fish Lake are Large Mouth Bass.
+            </p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🦌 Backyard Hunting 🦌</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
