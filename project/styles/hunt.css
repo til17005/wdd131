@@ -179,6 +179,7 @@ nav a:hover {
 .utah img {
     display: block;
     max-width: 90%;
+    height: auto;
     box-shadow: 0 0 15px;
     border-top-right-radius: 27px;
     margin: 1em auto;
@@ -187,6 +188,7 @@ nav a:hover {
 .uinta img {
     display: block;
     max-width: 90%;
+    height: auto;
     box-shadow: 0 0 15px;
     border-top-left-radius: 27px;
     margin: 1em auto;
@@ -202,6 +204,7 @@ nav a:hover {
 .elk img {
     display: block;
     max-width: 100%;
+    height: auto;
     box-shadow: 0 0 15px;
     border-top-left-radius: 27px;
     margin: 0 auto;
@@ -250,6 +253,7 @@ nav a:hover {
 .pic-list img {
     display: block;
     max-width: 90%;
+    height: auto;
     box-shadow: 0 0 15px;
     border-top-right-radius: 27px;
     margin: 0 auto;
