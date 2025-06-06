@@ -76,8 +76,7 @@ if (window.location.href.includes("sign-up.html")) {
 
     setSelectedIntrests();
 
-    // This will retrieve the selected intrests from localStorage
-
+    // This will retrieve the selected intrests from localStorageS
     function getSelectedIntrests() {
         return JSON.parse(localStorage.getItem('myIntrests'));
     }
