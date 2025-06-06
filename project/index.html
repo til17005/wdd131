@@ -52,6 +52,17 @@
             <picture class="utah">
                 <img src="images/utah.webp" alt="Wlcome to Utah">
             </picture>
+            <div class="weather"></div>
+            <div>
+                <form class="zipCodeForm" action="" method="POST">
+                    <fieldset>
+                        <legend>Get Weather</legend>
+                        <label for="zip">Zip code:</label>
+                        <input type="text" class="zip" id="zip" name="zip" pattern="[0-9]{5}" minlength="5" maxlength="5" title="Use 5 digit zip code" required value="84660">
+                        <input type="submit" value="Get Weather">
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </main>
     <footer>
