@@ -85,9 +85,13 @@ main {
 footer {
     border-top: solid 4px var(--text-color);
     border-bottom: solid 4px var(--text-color);
-    background-color: var(--accent-color1);
+    background-color: var(--secondary-color);
     text-align: center;
     padding: 15px 0;
+}
+
+footer p {
+    color: black;
 }
 
 /* Start Navigation Menu */
