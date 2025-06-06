@@ -82,10 +82,54 @@ if (window.location.href.includes("sign-up.html")) {
     }
 
     const selectedIntrests = getSelectedIntrests();
+    
+    // Just having an array of fun
+    // These are arrays of strings. You can see from the console when you look at 
+    // the first item it is the first letter of the first word in the intersts varibale
+    // this is caused by the way the HTML checkboxes are being stored in the variable
+    // We can change this by creating a new array by spitting the string array by commas
+    console.log(intrests);
+    console.log(selectedIntrests);
 
+    console.log(intrests[0]);
+    console.log(selectedIntrests[0]);
+
+    // I will use selectedIntrests since this is fetched from localStorage
+    const intrestsNew = selectedIntrests.split(", ").map(item => item.trim());
+    console.log(intrestsNew);
+    console.log(intrestsNew[0]);
+
+    // Replace "views" with "Mountain Views"
+    const intrestsView = intrestsNew.map(arrayItem =>
+        arrayItem.includes("views") ? "Mountain Views" : arrayItem
+    );
+
+    console.log(intrestsView);
+
+    // Now that we have a new array we can manipulate it like ordering it by name
+    // Normally a sort like below would work
+    intrestsView.sort();
+    console.log("Attempted Alphabetized:", intrestsView);
+
+    // I'm not sure what casues it (maybe having a space or the uppercase) but it won't alphabetize correctly unless I us localeCompare
+    // Honestly for this one I had to look it up. This one had me stumped. 
+    intrestsView.sort((a, b) => a.localeCompare(b));
+    console.log("Alphabetized:", intrestsView);
+
+    // With the following each object in the array will now have the first letter capitalized
+    const intrestsCap = intrestsView.map(intrestsView =>
+        intrestsView.charAt(0).toUpperCase() + intrestsView.slice(1)
+    );
+
+    console.log("Capitalized:", intrestsCap);
+
+    // Make each in the list be spaced correctly
+    const intrestsFinal = intrestsCap.join(", ");
+
+    // I will use intrestsFinal to display in the div
     // This displays using innerHTML the given text and given variables
     div.innerHTML = `<p>Thank you for signing up, ${firstName} ${lastName}!</p>
         <p>We have received your email address: ${email}.</p>
-        <p>Your selected interests include: ${selectedIntrests}.</p>
+        <p>Your selected interests include: ${intrestsFinal}.</p>
         <p>We will keep you updated with the latest news and information.</p>`;
 }
